@@ -5,9 +5,34 @@ class ProductItem extends HTMLElement {
   constructor(product, addedToCart){
     super();
     
-    //we need to create shadow-root, image, title, price and button
+    this.attachShadow({mode: 'open'});
     
-    const style = document.createElement('style')
+    const wrap = document.createElement('li');
+    
+    const imageTag = document.createElement('img');
+    imageTag.setAttribute('src', product.image);
+    imageTag.setAttribute('alt', product.title);
+    imageTag.setAttribute('width', 200);
+    
+    wrap.appendChild(imageTag);
+    
+    const pClassTitle = document.createElement('p');
+    pClassTitle.className = 'title';
+    pClassTitle.innerText = product.title;
+    
+    wrap.appendChild(pClassTitle);
+    
+    const pClassPrice = document.createElement('p');
+    pClassPrice.className = 'price';
+    pClassPrice.innerText = product.price;
+    
+    wrap.appendChild(pClassPrice);
+    
+    const button = document.createElement('button');
+    
+    wrap.appendChild(button);
+    
+    const style = document.createElement('style');
     style.textContent = `
     .price {
       color: green;
@@ -72,7 +97,7 @@ class ProductItem extends HTMLElement {
       overflow: auto;
       text-overflow: unset;
     }`
-    
+    this.shadowRoot.append(style, wrap);
 
   }
 }
