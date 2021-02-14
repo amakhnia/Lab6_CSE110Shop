@@ -34,7 +34,7 @@ class ProductItem extends HTMLElement {
     var count = document.getElementById('cart-count');
     button.textContent = cart.includes(product) ? "Remove From Cart" : "Add To Cart";
     button.onclick = function(){
-      if(button.textContent = "Add To Cart"){
+      if(button.textContent == "Add To Cart"){
         cart = JSON.parse(window.localStorage.getItem('cart'));
         button.textContent = "Remove From Cart";
         alert('Added To Cart!');
@@ -56,8 +56,6 @@ class ProductItem extends HTMLElement {
     }
     
     wrap.appendChild(button);
-    
-    
     
     const style = document.createElement('style');
     style.textContent = `
