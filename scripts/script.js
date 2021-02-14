@@ -12,16 +12,19 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   const retrievedObject = localStorage.getItem('obj');
-  const t = JSON.parse(retrievedObject);
-  
+  const arr = JSON.parse(retrievedObject);
+
+
   function addingElements(value){
     console.log('obj: ', value);
+    let curr = new ProductItem(value, false);
+    document.getElementById('product-list').appendChild(curr);
   }
 
-
-  t.forEach(addingElements);
-
   
+  arr.forEach(addingElements);
+
+
   
 
   //initializing cart
