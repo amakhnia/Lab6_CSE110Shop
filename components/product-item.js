@@ -8,16 +8,13 @@ class ProductItem extends HTMLElement {
     let shadow = this.attachShadow({mode: 'open'});
     
     const wrap = document.createElement('li');
-    shadow.appendChild(style);
-    shadow.appendChild(wrap);
-    
+    wrap.className = 'product';
+
     const imageTag = document.createElement('img');
     imageTag.setAttribute('src', product.image);
     imageTag.setAttribute('alt', product.title);
     imageTag.setAttribute('width', 200);
-    imageTag.setAttribute('min-height', 500);
-    imageTag.setAttribute('max-height', 500);
-    
+
     wrap.appendChild(imageTag);
     
     const classTitle = document.createElement('p');
@@ -33,19 +30,18 @@ class ProductItem extends HTMLElement {
     wrap.appendChild(classPrice);
     
     const button = document.createElement('button');
-    /*
     var cart = JSON.parse(window.localStorage.getItem('cart'));
     var count = document.getElementById('cart-count');
     button.textContent = cart.includes(product) ? "Remove From Cart" : "Add To Cart";
     button.onclick = function(){
-      if(button.textContent = "Add To Cart"){
+      if(button.textContent == "Add To Cart"){
         cart = JSON.parse(window.localStorage.getItem('cart'));
         button.textContent = "Remove From Cart";
         count.textContent = parseInt(count.textContent) + 1;
         cart.push(product);
         window.localStorage.setItem('cart', JSON.stringify(cart));
       }
-      else{
+      else{ //if removing
         cart = JSON.parse(window.localStorage.getItem('cart'));
         button.textContent = "Add To Cart";
         count.textContent = parseInt(count.textContent) - 1;
@@ -55,10 +51,8 @@ class ProductItem extends HTMLElement {
 
     //cart = JSON.parse(window.localStorage.getItem('cart'))
     }
-    */
+    
     wrap.appendChild(button);
-    
-    
     
     const style = document.createElement('style');
     style.textContent = `
@@ -126,7 +120,8 @@ class ProductItem extends HTMLElement {
       text-overflow: unset;
     }`
 
-   shadow.appendChild(style, wrap);
+   shadow.appendChild(style);
+   shadow.appendChild(wrap);
   }
 }
 
