@@ -14,7 +14,6 @@ window.addEventListener('DOMContentLoaded', () => {
   const retrievedObject = localStorage.getItem('obj');
   const arr = JSON.parse(retrievedObject);
 
-  window.localStorage.setItem('cart', )
 
   function addingElements(value){
     console.log('obj: ', value);
