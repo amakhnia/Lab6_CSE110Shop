@@ -9,7 +9,7 @@ class ProductItem extends HTMLElement {
     
     const wrap = document.createElement('li');
     wrap.className = 'product';
-    
+
     const imageTag = document.createElement('img');
     imageTag.setAttribute('src', product.image);
     imageTag.setAttribute('alt', product.title);
@@ -33,8 +33,6 @@ class ProductItem extends HTMLElement {
     
 
     const button = document.createElement('button');
-
-    /*
     var cart = JSON.parse(window.localStorage.getItem('cart'));
     var count = document.getElementById('cart-count');
     button.textContent = cart.includes(product) ? "Remove From Cart" : "Add To Cart";
@@ -56,7 +54,7 @@ class ProductItem extends HTMLElement {
 
     //cart = JSON.parse(window.localStorage.getItem('cart'))
     }
-    */
+    
     wrap.appendChild(button);
     
     
