@@ -14,7 +14,7 @@ class ProductItem extends HTMLElement {
     imageTag.setAttribute('src', product.image);
     imageTag.setAttribute('alt', product.title);
     imageTag.setAttribute('width', 200);
-
+    imageTag.setAttribute('min-height', 700);
     wrap.appendChild(imageTag);
     
     const classTitle = document.createElement('p');
@@ -49,7 +49,6 @@ class ProductItem extends HTMLElement {
         window.localStorage.setItem('cart', JSON.stringify(cart));
       }
 
-    //cart = JSON.parse(window.localStorage.getItem('cart'))
     }
     
     wrap.appendChild(button);
@@ -75,6 +74,7 @@ class ProductItem extends HTMLElement {
       'add';
       grid-template-rows: 67% 11% 11% 11%;
       height: 450px;
+      max-height: 100%;
       filter: drop-shadow(0px 0px 6px rgb(0,0,0,0.2));
       margin: 0 30px 30px 0;
       padding: 10px 20px;
@@ -87,7 +87,7 @@ class ProductItem extends HTMLElement {
       border-radius: 5px;
       color: black;
       justify-self: center;
-      max-height: 35px;
+      max-height: 100%;
       padding: 8px 20px;
       transition: 0.1s ease all;
     }
@@ -102,6 +102,7 @@ class ProductItem extends HTMLElement {
       align-self: center;
       justify-self: center;
       width: 100%;
+      max-height: 100%;
     }
 
     .title {
