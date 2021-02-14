@@ -5,7 +5,7 @@ class ProductItem extends HTMLElement {
   constructor(product, addedToCart){
     super();
     
-    this.attachShadow({mode: 'open'});
+    let shadow = this.attachShadow({mode: 'open'});
     
     const wrap = document.createElement('li');
     
@@ -16,19 +16,20 @@ class ProductItem extends HTMLElement {
     
     wrap.appendChild(imageTag);
     
-    const pClassTitle = document.createElement('p');
-    pClassTitle.className = 'title';
-    pClassTitle.innerText = product.title;
+    const classTitle = document.createElement('p');
+    classTitle.className = 'title';
+    classTitle.innerText = product.title;
     
-    wrap.appendChild(pClassTitle);
+    wrap.appendChild(classTitle);
     
-    const pClassPrice = document.createElement('p');
-    pClassPrice.className = 'price';
-    pClassPrice.innerText = product.price;
+    const classPrice = document.createElement('p');
+    classPrice.className = 'price';
+    classPrice.innerText = product.price;
     
-    wrap.appendChild(pClassPrice);
+    wrap.appendChild(classPrice);
     
     const button = document.createElement('button');
+    button.setAttribute('onclick')
     
     wrap.appendChild(button);
     
@@ -97,8 +98,8 @@ class ProductItem extends HTMLElement {
       overflow: auto;
       text-overflow: unset;
     }`
-    this.shadowRoot.append(style, wrap);
 
+   shadow.append(style, wrap);
   }
 }
 
