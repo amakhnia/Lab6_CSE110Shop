@@ -74,6 +74,7 @@ class ProductItem extends HTMLElement {
       'add';
       grid-template-rows: 67% 11% 11% 11%;
       height: 450px;
+      max-height: 100%;
       filter: drop-shadow(0px 0px 6px rgb(0,0,0,0.2));
       margin: 0 30px 30px 0;
       padding: 10px 20px;
@@ -101,6 +102,7 @@ class ProductItem extends HTMLElement {
       align-self: center;
       justify-self: center;
       width: 100%;
+      max-height: 100%;
     }
 
     .title {
