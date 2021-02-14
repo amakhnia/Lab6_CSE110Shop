@@ -37,7 +37,6 @@ class ProductItem extends HTMLElement {
       if(button.textContent == "Add To Cart"){
         cart = JSON.parse(window.localStorage.getItem('cart'));
         button.textContent = "Remove From Cart";
-        alert('Added To Cart!');
         count.textContent = parseInt(count.textContent) + 1;
         cart.push(product);
         window.localStorage.setItem('cart', JSON.stringify(cart));
@@ -45,11 +44,9 @@ class ProductItem extends HTMLElement {
       else{ //if removing
         cart = JSON.parse(window.localStorage.getItem('cart'));
         button.textContent = "Add To Cart";
-        alert('Removed From Cart!');
         count.textContent = parseInt(count.textContent) - 1;
         cart.splice(cart.indexOf(product), 1);
         window.localStorage.setItem('cart', JSON.stringify(cart));
-        
       }
 
     //cart = JSON.parse(window.localStorage.getItem('cart'))
