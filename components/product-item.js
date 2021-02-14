@@ -8,13 +8,14 @@ class ProductItem extends HTMLElement {
     let shadow = this.attachShadow({mode: 'open'});
     
     const wrap = document.createElement('li');
-
+    wrap.className = 'product';
+    
     const imageTag = document.createElement('img');
     imageTag.setAttribute('src', product.image);
     imageTag.setAttribute('alt', product.title);
     imageTag.setAttribute('width', 200);
-    imageTag.setAttribute('min-height', 500);
-    imageTag.setAttribute('max-height', 500);
+    //imageTag.setAttribute('min-height', 500);
+    //imageTag.setAttribute('max-height', 500);
     
     wrap.appendChild(imageTag);
     
@@ -30,7 +31,9 @@ class ProductItem extends HTMLElement {
     
     wrap.appendChild(classPrice);
     
+
     const button = document.createElement('button');
+
     /*
     var cart = JSON.parse(window.localStorage.getItem('cart'));
     var count = document.getElementById('cart-count');
