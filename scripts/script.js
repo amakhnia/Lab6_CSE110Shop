@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
   if(localstorage.getItem('obj') == NULL){
     fetch('https://fakestoreapi.com/products')
     .then(response => response.json())
-    .then(data => localstorage.setItem('obj', JSON.stringify(data)) //convert between JSON object to string
+    .then(data => localstorage.setItem('obj', JSON.stringify(data))) //convert between JSON object to string
     .then(addtoCart(cart));
   }
   //initializing cart
