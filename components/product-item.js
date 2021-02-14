@@ -87,7 +87,7 @@ class ProductItem extends HTMLElement {
       border-radius: 5px;
       color: black;
       justify-self: center;
-      max-height: 35px;
+      max-height: 100%;
       padding: 8px 20px;
       transition: 0.1s ease all;
     }
