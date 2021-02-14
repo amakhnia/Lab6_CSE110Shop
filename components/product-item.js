@@ -29,8 +29,11 @@ class ProductItem extends HTMLElement {
     wrap.appendChild(classPrice);
     
     const button = document.createElement('button');
-    button.setAttribute('onclick')
+    button.onclick = function(){
     
+
+    //cart = JSON.parse(window.localStorage.getItem('cart'))
+    }
     wrap.appendChild(button);
     
     const style = document.createElement('style');

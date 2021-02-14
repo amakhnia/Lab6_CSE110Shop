@@ -12,7 +12,14 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   let retrievedObject = localStorage.getItem('obj');
-  console.log('obj: ', JSON.parse(retrievedObject));
+
+  retrievedObject.forEach(addingElements);
+
+  function addingElements(value){
+    console.log('obj: ', value);
+  }
+
+  
 
   //initializing cart
   if(window.localStorage.getItem('cart') == null){
