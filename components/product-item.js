@@ -32,20 +32,20 @@ class ProductItem extends HTMLElement {
     const button = document.createElement('button');
     var cart = JSON.parse(window.localStorage.getItem('cart'));
     var count = document.getElementById('cart-count');
-    button.textContent = cart.includes(product) ? "Remove From Cart" : "Add To Cart";
+    button.textContent = cart.includes(product.title) ? "Remove From Cart" : "Add To Cart";
     button.onclick = function(){
       if(button.textContent == "Add To Cart"){
         cart = JSON.parse(window.localStorage.getItem('cart'));
         button.textContent = "Remove From Cart";
         count.textContent = parseInt(count.textContent) + 1;
-        cart.push(product);
+        cart.push(product.title);
         window.localStorage.setItem('cart', JSON.stringify(cart));
       }
       else{ //if removing
         cart = JSON.parse(window.localStorage.getItem('cart'));
         button.textContent = "Add To Cart";
         count.textContent = parseInt(count.textContent) - 1;
-        cart.splice(cart.indexOf(product), 1);
+        cart.splice(cart.indexOf(product.title), 1);
         window.localStorage.setItem('cart', JSON.stringify(cart));
       }
 
