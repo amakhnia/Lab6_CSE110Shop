@@ -13,6 +13,7 @@ class ProductItem extends HTMLElement {
     imageTag.setAttribute('src', product.image);
     imageTag.setAttribute('alt', product.title);
     imageTag.setAttribute('width', 200);
+    imageTag.setAttribute('max-height', 500);
     
     wrap.appendChild(imageTag);
     
@@ -23,7 +24,7 @@ class ProductItem extends HTMLElement {
     wrap.appendChild(classTitle);
     
     const classPrice = document.createElement('p');
-    classPrice.className = 'price';
+    classPrice.className = '$' + 'price';
     classPrice.innerText = product.price;
     
     wrap.appendChild(classPrice);
