@@ -11,8 +11,21 @@ window.addEventListener('DOMContentLoaded', () => {
    // .then(addtoCart(cart));
   }
 
-  let retrievedObject = localStorage.getItem('obj');
-  console.log('obj: ', JSON.parse(retrievedObject));
+  const retrievedObject = localStorage.getItem('obj');
+  const arr = JSON.parse(retrievedObject);
+
+
+  function addingElements(value){
+    console.log('obj: ', value);
+    let curr = new ProductItem(value, false);
+    document.getElementById('product-list').appendChild(curr);
+  }
+
+  
+  arr.forEach(addingElements);
+
+
+  
 
   //initializing cart
   if(window.localStorage.getItem('cart') == null){

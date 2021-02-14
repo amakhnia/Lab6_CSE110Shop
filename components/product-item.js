@@ -29,8 +29,29 @@ class ProductItem extends HTMLElement {
     wrap.appendChild(classPrice);
     
     const button = document.createElement('button');
-    button.setAttribute('onclick')
-    
+    /*
+    var cart = JSON.parse(window.localStorage.getItem('cart'));
+    var count = document.getElementById('cart-count');
+    button.textContent = cart.includes(product) ? "Remove From Cart" : "Add To Cart";
+    button.onclick = function(){
+      if(button.textContent = "Add To Cart"){
+        cart = JSON.parse(window.localStorage.getItem('cart'));
+        button.textContent = "Remove From Cart";
+        count.textContent = parseInt(count.textContent) + 1;
+        cart.push(product);
+        window.localStorage.setItem('cart', JSON.stringify(cart));
+      }
+      else{
+        cart = JSON.parse(window.localStorage.getItem('cart'));
+        button.textContent = "Add To Cart";
+        count.textContent = parseInt(count.textContent) - 1;
+        cart.splice(cart.indexOf(product), 1);
+        window.localStorage.setItem('cart', JSON.stringify(cart));
+      }
+
+    //cart = JSON.parse(window.localStorage.getItem('cart'))
+    }
+    */
     wrap.appendChild(button);
     
     const style = document.createElement('style');
