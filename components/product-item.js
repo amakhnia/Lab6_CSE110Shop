@@ -8,9 +8,7 @@ class ProductItem extends HTMLElement {
     let shadow = this.attachShadow({mode: 'open'});
     
     const wrap = document.createElement('li');
-    shadow.appendChild(style);
-    shadow.appendChild(wrap);
-    
+
     const imageTag = document.createElement('img');
     imageTag.setAttribute('src', product.image);
     imageTag.setAttribute('alt', product.title);
@@ -126,7 +124,8 @@ class ProductItem extends HTMLElement {
       text-overflow: unset;
     }`
 
-   shadow.appendChild(style, wrap);
+   shadow.appendChild(style);
+   shadow.appendChild(wrap);
   }
 }
 
