@@ -1,20 +1,25 @@
 // Script.js
 
 window.addEventListener('DOMContentLoaded', () => {
-  // TODO
+  // TODO 
   //initializing objects and fetching from given api
-  if(localStorage.getItem('obj') == NULL){
+  let cart = [];
+  if(window.localStorage.getItem('obj') == null){
     fetch('https://fakestoreapi.com/products')
     .then(response => response.json())
-    .then(data => localStorage.setItem('obj', JSON.stringify(data))) //convert between JSON object to string
-    .then(addtoCart(cart));
+    .then(data => window.localStorage.setItem('obj', JSON.stringify(data))); //convert between JSON object to string
+   // .then(addtoCart(cart));
   }
+
+  let retrievedObject = localStorage.getItem('obj');
+  console.log('obj: ', JSON.parse(retrievedObject));
+
   //initializing cart
-  if(localStorage.getItem('cart') == NULL){
-    localStorage.setItem('cart', JSON.stringify(cart))
+  if(window.localStorage.getItem('cart') == null){
+    window.localStorage.setItem('cart', JSON.stringify(cart))
   }
   else{
-    addtoCart()
+    addtoCart();
   }
 });
   
