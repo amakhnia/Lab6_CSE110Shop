@@ -13,12 +13,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
   let retrievedObject = localStorage.getItem('obj');
 
-  retrievedObject.forEach(addingElements);
-
   function addingElements(value){
     console.log('obj: ', value);
   }
 
+
+  retrievedObject.forEach(addingElements);
+
+  
   
 
   //initializing cart
