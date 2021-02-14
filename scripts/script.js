@@ -25,7 +25,6 @@ window.addEventListener('DOMContentLoaded', () => {
     .then(data => window.localStorage.setItem('obj', JSON.stringify(data))); //convert between JSON object to string
   }
 
-
   //initializing cart
   if(window.localStorage.getItem('cart') == null){
     window.localStorage.setItem('cart', JSON.stringify(cart));
@@ -36,7 +35,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const retrievedObject = window.localStorage.getItem('obj');
   const arr = JSON.parse(retrievedObject);
-
 
   function addingElements(value){
     console.log('obj: ', value);

@@ -14,7 +14,7 @@ class ProductItem extends HTMLElement {
     imageTag.setAttribute('src', product.image);
     imageTag.setAttribute('alt', product.title);
     imageTag.setAttribute('width', 200);
-
+    imageTag.setAttribute('min-height', 700);
     wrap.appendChild(imageTag);
     
     const classTitle = document.createElement('p');
@@ -49,7 +49,6 @@ class ProductItem extends HTMLElement {
         window.localStorage.setItem('cart', JSON.stringify(cart));
       }
 
-    //cart = JSON.parse(window.localStorage.getItem('cart'))
     }
     
     wrap.appendChild(button);
