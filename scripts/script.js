@@ -29,7 +29,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   function addingCartElements(){
-      alert("initializing cart");
+      //alert("initializing cart");
       //window.localStorage.setItem('cart')
       let cart = JSON.parse(window.localStorage.getItem('cart'));
       let count = document.getElementById('cart-count');
