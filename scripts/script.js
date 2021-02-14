@@ -3,15 +3,15 @@
 window.addEventListener('DOMContentLoaded', () => {
   // TODO
   //initializing objects and fetching from given api
-  if(localstorage.getItem('obj') == NULL){
+  if(localStorage.getItem('obj') == NULL){
     fetch('https://fakestoreapi.com/products')
     .then(response => response.json())
-    .then(data => localstorage.setItem('obj', JSON.stringify(data))) //convert between JSON object to string
+    .then(data => localStorage.setItem('obj', JSON.stringify(data))) //convert between JSON object to string
     .then(addtoCart(cart));
   }
   //initializing cart
-  if(localstorage.getItem('cart') == NULL){
-    localstorage.setItem('cart', JSON.stringify(cart))
+  if(localStorage.getItem('cart') == NULL){
+    localStorage.setItem('cart', JSON.stringify(cart))
   }
   else{
     addtoCart()
