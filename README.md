@@ -2,4 +2,6 @@
 
 Anastasiia Makhniaieva - amakhnia@ucsd.edu
 
-The site is published https://amakhnia.github.io/Lab6_CSE110Shop/.
+Nick Krolikowski - nkroliko@ucsd.edu
+
+The site is published at https://amakhnia.github.io/Lab6_CSE110Shop/.
